@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<%= render 'form_edit' %>
+
+
+<div>  
+<h2>Add a Circuit:</h2>
+<%= form_for([@site, @site.circuits.build], local: true) do |form| %>
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+</div>
+
+<%#= link_to 'Edit', edit_customer_sites_path(@customer) %> |
+<%= link_to 'Back to Customer Index', customers_path %> |
+
+
+
+

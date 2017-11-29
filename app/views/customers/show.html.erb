@@ -1,0 +1,76 @@
+<p id="notice"><%= notice %></p>
+
+<div>
+<table>
+  <thead>
+    <th colspan="2">Customer Details</th>
+    </thead>
+    <tr>
+    <td>Name</td>
+    <td><%= @customer.name %></td>
+    </tr>
+    
+    <tr>
+    <td>Contact</td>
+    <td><%= @customer.contact %></td>
+    </tr>
+    
+    <tr>
+    <td>Phone</td>
+    <td><%= @customer.phone %></td>
+    </tr>
+    
+    <tr>
+    <td>Email</td>
+    <td><%= @customer.email %></td>
+    </tr>
+</table>    
+</div>
+
+<div>
+<h2>Sites</h2>
+<table>
+  <thead>
+    <th colspan="9">Site Details</th>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Address</th>
+      <th>Contact</th>
+      <th>Phone</th>
+      <th>Email</th>
+      <th colspan="3">Select</th>
+    </tr>
+  </thead>
+<%= @customer.sites.each do |site| %>
+<tbody>
+      <tr>
+        <td><%= site.id %></td>
+        <td><%= site.name %></td>
+        <td><%= site.address %></td>
+        <td><%= site.contact %></td>
+        <td><%= site.phone %></td>
+        <td><%= site.email %></td>
+        <td><%= link_to 'Show', customer_site_path(@customer, site) %></td>
+        <td><%= link_to 'Edit', edit_customer_site_path(@customer, site) %></td>     
+        <td><%= link_to 'Destroy', site, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+<% end %>
+      </tr>
+  </tbody>
+</table>
+</div>
+ 
+<div>  
+<h2>Add a Site:</h2>
+<%= form_for([@customer, @customer.sites.build], local: true) do |form| %>
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+</div>
+
+<%= link_to 'Edit', edit_customer_path(@customer) %> |
+<%= link_to 'Back', customers_path %> |
+<%= link_to 'Sites', customer_sites_path(@customer) %> |
+<a href="/users/sign_up">New User</a>
+<%#= link_to 'Circuits', customer_circuits %>

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id: MyString
+  type: 
+  speed: MyString
+  carrier: MyString
+  site_id: 
+
+two:
+  id: MyString
+  type: 
+  speed: MyString
+  carrier: MyString
+  site_id: 

@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Id:</strong>
+  <%= @circuit.id %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @circuit.type %>
+</p>
+
+<p>
+  <strong>Speed:</strong>
+  <%= @circuit.speed %>
+</p>
+
+<p>
+  <strong>Carrier:</strong>
+  <%= @circuit.carrier %>
+</p>
+
+<p>
+  <strong>Site:</strong>
+  <%= @circuit.site %>
+</p>
+
+<%= link_to 'Edit', edit_circuit_path(@circuit) %> |
+<%= link_to 'Back', circuits_path %>

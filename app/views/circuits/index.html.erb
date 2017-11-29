@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Circuits</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Type</th>
+      <th>Speed</th>
+      <th>Carrier</th>
+      <th>Site</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @circuits.each do |circuit| %>
+      <tr>
+        <td><%= circuit.id %></td>
+        <td><%= circuit.type %></td>
+        <td><%= circuit.speed %></td>
+        <td><%= circuit.carrier %></td>
+        <td><%= circuit.site %></td>
+        <td><%= link_to 'Show', circuit %></td>
+        <td><%= link_to 'Edit', edit_circuit_path(circuit) %></td>
+        <td><%= link_to 'Destroy', circuit, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Circuit', new_circuit_path %>
