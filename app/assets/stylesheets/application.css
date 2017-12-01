@@ -19,6 +19,7 @@ div{
     width: 48%;
     float: left;
     padding: 1em;
+    border:1px solid black;
 }
 
 .right{
@@ -114,6 +115,9 @@ input[type=submit]:hover {
     color: white;
     background-color: black;
 }
+input[type=checkbox]{
+    width: 1%;
+}
 
 select {
     width: 20%;
@@ -140,3 +144,12 @@ label {
     color:#fff;
 }
 
+#error_explanation{
+    padding: none;
+    margin: none;
+    width: 100%;
+}
+
+.field_with_errors{
+    width: 100%;
+}
