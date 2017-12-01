@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 20171129104313) do
 
   create_table "circuits", force: :cascade do |t|
     t.string   "ref"
-    t.string   "type"
+    t.string   "category"
     t.string   "speed"
     t.string   "carrier"
     t.string   "carrierRef"

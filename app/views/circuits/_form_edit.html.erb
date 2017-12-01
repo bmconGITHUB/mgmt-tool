@@ -1,5 +1,4 @@
-<%#= form_for(@circuit) do |f| %>
-<%= form_for([@site, @site.circuits.build]) do |form| %>
+<%= form_for(@circuit) do |f| %>
   <% if @circuit.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@circuit.errors.count, "error") %> prohibited this circuit from being saved:</h2>
@@ -13,8 +12,8 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :id %>
-    <%= f.text_field :id %><br>
+    <%= f.label :circuit, 'Circuit ID' %>
+    <%= @circuit.id %><br>
 
     <%= f.label :ref %>
     <%= f.text_field :ref %><br>
@@ -31,8 +30,8 @@
     <%= f.label :carrierRef %>
     <%= f.text_field :carrierRef %><br>
 
-    <%= f.label :site_id %>
-    <%= f.text_field :site_id %>
+    <%= f.label :site_id, 'Site ID' %>
+    <%= @circuit.site_id %><br>
 
     <%= f.submit %>
   </div>

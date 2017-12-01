@@ -1,19 +1,24 @@
 <p id="notice"><%= notice %></p>
 
+<%= link_to 'Back to Customer', customers_path(@customer) %>
+<%#= link_to 'New Site', new_site_path %>
+<br>
+
+<div>
 <h1>Listing Sites</h1>
 
 <table>
   <thead>
     <tr>
-      <th>ID</th>      
+      <th>ID</th> 
+      <th>Customer ID</th>
+      <th>Customer Name</th>
       <th>Name</th>
       <th>Address</th>
       <th>Contact</th>
       <th>Phone</th>
       <th>Email</th>
-      <th>Customer ID</th>
-      <th>Customer Name</th>
-      <th colspan="3">Select</th>
+      <th>Select</th>
     </tr>
   </thead>
 
@@ -21,24 +26,20 @@
     <% @sites.each do |site| %>
     <% if current_user.admin? %>
       <tr>
-        <td><%= site.id %></td>        
+        <td><%= site.id %></td>
+        <td><%= site.customer_id %></td>
+        <td><%= site.customer.name %></td>
         <td><%= site.name %></td>
         <td><%= site.address %></td>
         <td><%= site.contact %></td>
         <td><%= site.phone %></td>
         <td><%= site.email %></td>
-        <td><%= site.customer_id %></td>
-        <td><%= site.customer_id %></td>
-        <td><%= link_to 'Show', site %></td>
-        <td><%#= link_to 'Edit', edit_customer_site_path(@customer, site) %></td>
-        <td><%#= link_to 'Destroy', delete_customer_site_path(@customer, site), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td class="edit"><%= link_to 'Show', site %></td>
       </tr>
     <% end %>
     <% end %>
   </tbody>
 </table>
+</div>
 
-<br>
-<%= link_to 'Back to Customer', @customer %>
-<%#= link_to 'New Site', new_site_path %>
 

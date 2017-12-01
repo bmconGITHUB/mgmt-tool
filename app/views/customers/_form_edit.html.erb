@@ -1,10 +1,10 @@
-<%= form_for(@site) do |form| %>
-  <% if @site.errors.any? %>
+<%= form_for (@customer) do |form| %>
+  <% if @customer.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@site.errors.count, "error") %> prohibited this site from being saved:</h2>
+      <h2><%= pluralize(@customer.errors.count, "error") %> prohibited this customer from being saved:</h2>
 
       <ul>
-      <% @site.errors.full_messages.each do |message| %>
+      <% @customer.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
@@ -12,14 +12,16 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :site_id, 'Site ID' %>
-    <%= @site.id %><br>
-
+    <table>
+    <thead>
+    <th>Customer Details</th>
+    </thead>
+    </table>  
+    <%= form.label :customer_id, 'Customer ID' %>
+    <%= @customer.id %><br>      
+      
     <%= form.label :name %>
     <%= form.text_field :name %><br>
-
-    <%= form.label :address %>
-    <%= form.text_field :address %><br>
 
     <%= form.label :contact %>
     <%= form.text_field :contact %><br>
@@ -30,10 +32,6 @@
     <%= form.label :email %>
     <%= form.text_field :email %><br>
 
-    <%= form.label :customer_id, 'Customer ID' %>
-    <%= @site.customer_id %><br>
-
     <%= form.submit %>
-
   </div>
 <% end %>

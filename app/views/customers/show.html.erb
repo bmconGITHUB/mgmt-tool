@@ -1,34 +1,15 @@
 <p id="notice"><%= notice %></p>
 
-<div>
-<table>
-  <thead>
-    <th colspan="2">Customer Details</th>
-    </thead>
-    <tr>
-    <td>Name</td>
-    <td><%= @customer.name %></td>
-    </tr>
-    
-    <tr>
-    <td>Contact</td>
-    <td><%= @customer.contact %></td>
-    </tr>
-    
-    <tr>
-    <td>Phone</td>
-    <td><%= @customer.phone %></td>
-    </tr>
-    
-    <tr>
-    <td>Email</td>
-    <td><%= @customer.email %></td>
-    </tr>
-</table>    
-</div>
+<%= link_to 'Back', @customers %> |
+<% if current_user.admin? %>
+<%= link_to 'Sites', customer_sites_path(@customer) %> |
+<% end %>
+<a href="/users/sign_up">New User</a>
+<br>
 
-<div>
-<h2>Sites</h2>
+<%= render 'form_edit' %>
+
+<div class="right", style="overflow-x:auto;">
 <table>
   <thead>
     <th colspan="9">Site Details</th>
@@ -51,26 +32,20 @@
         <td><%= site.contact %></td>
         <td><%= site.phone %></td>
         <td><%= site.email %></td>
-        <td><%= link_to 'Show', customer_site_path(@customer, site) %></td>
-        <td><%= link_to 'Edit', edit_customer_site_path(@customer, site) %></td>     
-        <td><%= link_to 'Destroy', site, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td class="edit"><%= link_to 'Show', customer_site_path(@customer, site) %></td>
+        <td class="edit"><%= link_to 'Edit', edit_customer_site_path(@customer, site) %></td>     
+        <td class="edit"><%= link_to 'Destroy', site, method: :delete, data: { confirm: 'Are you sure?' } %></td>
 <% end %>
       </tr>
   </tbody>
 </table>
-</div>
- 
-<div>  
-<h2>Add a Site:</h2>
+
 <%= form_for([@customer, @customer.sites.build], local: true) do |form| %>
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+
+    <%= form.submit 'Add a Site'%>
+
 <% end %>
 </div>
 
-<%= link_to 'Edit', edit_customer_path(@customer) %> |
-<%= link_to 'Back', customers_path %> |
-<%= link_to 'Sites', customer_sites_path(@customer) %> |
-<a href="/users/sign_up">New User</a>
-<%#= link_to 'Circuits', customer_circuits %>
+
+

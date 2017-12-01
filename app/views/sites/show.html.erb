@@ -1,19 +1,47 @@
 <p id="notice"><%= notice %></p>
 
+<%= link_to 'Back to Customer', customers_path(@customer) %>
+
 <%= render 'form_edit' %>
 
+<div class="right", style="overflow-x:auto;">
 
-<div>  
-<h2>Add a Circuit:</h2>
+<table>
+  <thead>
+    <th colspan="9">Circuit Details</th>
+    <tr>
+      <th>ID</th>
+      <th>Category</th>
+      <th>Speed</th>
+      <th>Carrier</th>
+      <th>Site</th>
+      <th colspan="3">Select</th>
+    </tr>
+  </thead>
+<% @site.circuits.each do |circuit| %>
+<tbody>
+      <tr>
+        <td><%= circuit.id %></td>
+        <td><%= circuit.category %></td>
+        <td><%= circuit.speed %></td>
+        <td><%= circuit.carrier %></td>
+        <td><%= circuit.site_id %></td>
+        <td class="edit"><%= link_to 'Show', site_circuit_path(@site, circuit) %></td>
+        <td class="edit"><%= link_to 'Edit', edit_site_circuit_path(@site, circuit) %></td>     
+        <td class="edit"><%= link_to 'Destroy', circuit, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+<% end %>
+      </tr>
+  </tbody>
+</table>
+
+
+
 <%= form_for([@site, @site.circuits.build], local: true) do |form| %>
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+    <%= form.submit 'Add a Circuit'%>
 <% end %>
 </div>
 
-<%#= link_to 'Edit', edit_customer_sites_path(@customer) %> |
-<%= link_to 'Back to Customer Index', customers_path %> |
+
 
 
 

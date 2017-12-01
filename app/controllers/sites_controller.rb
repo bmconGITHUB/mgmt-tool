@@ -8,6 +8,7 @@ class SitesController < ApplicationController
   # GET /customers/:customer_id/sites/:id
   # GET /sites/:id.xml
   def show
+    #customer = Customer.find(params[:customer_id])
     @site = Site.find_by(id: params[:id])
     if @site.nil?
       redirect_to action: :index
@@ -86,8 +87,7 @@ class SitesController < ApplicationController
     @site.destroy
 
     respond_to do |format|
-      #1st argument reference the path /customers/:customer_id/sites/
-      format.html { redirect_to(customers_path) }
+      format.html { redirect_to :back }
       format.xml  { head :ok }
     end
   end

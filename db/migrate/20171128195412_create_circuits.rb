@@ -2,7 +2,7 @@ class CreateCircuits < ActiveRecord::Migration
   def change
     create_table :circuits do |t|
       t.string :ref
-      t.string :type
+      t.string :category
       t.string :speed
       t.string :carrier
       t.string :carrierRef

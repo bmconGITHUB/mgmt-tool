@@ -12,27 +12,21 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :name %><br>
-    <%= form.text_field :name %>
-  </div>
-  <div class="field">
-    <%= form.label :address %><br>
-    <%= form.text_field :address %>
-  </div>
-  <div class="field">
-    <%= form.label :contact %><br>
-    <%= form.text_field :contact %>
-  </div>
-  <div class="field">
-    <%= form.label :phone %><br>
-    <%= form.text_field :phone %>
-  </div>
-  <div class="field">
-    <%= form.label :email %><br>
-    <%= form.text_field :email %>
-  </div>
+    <%= form.label :name %>
+    <%= form.text_field :name %><br>
 
-  <div class="actions">
+    <%= form.label :address %>
+    <%= form.text_field :address %><br>
+
+    <%= form.label :contact %>
+    <%= form.text_field :contact %><br>
+
+    <%= form.label :phone %>
+    <%= form.text_field :phone %><br>
+
+    <%= form.label :email %>
+    <%= form.text_field :email %>
+
     <%= form.submit %>
   </div>
 <% end %>

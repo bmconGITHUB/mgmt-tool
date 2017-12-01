@@ -1,29 +1,11 @@
 <p id="notice"><%= notice %></p>
+<%#= link_to 'Edit', edit_circuit_path(@circuit) %>
+<%#= link_to 'Back', redirect_to :back %>
+<%= link_to 'Back to Site', sites_path(@site) %>
+<%= link_to 'Back to Customer', customers_path(@customer) %>
+<br>
+<%= render 'form_edit' %>
 
-<p>
-  <strong>Id:</strong>
-  <%= @circuit.id %>
-</p>
 
-<p>
-  <strong>Type:</strong>
-  <%= @circuit.type %>
-</p>
 
-<p>
-  <strong>Speed:</strong>
-  <%= @circuit.speed %>
-</p>
 
-<p>
-  <strong>Carrier:</strong>
-  <%= @circuit.carrier %>
-</p>
-
-<p>
-  <strong>Site:</strong>
-  <%= @circuit.site %>
-</p>
-
-<%= link_to 'Edit', edit_circuit_path(@circuit) %> |
-<%= link_to 'Back', circuits_path %>
