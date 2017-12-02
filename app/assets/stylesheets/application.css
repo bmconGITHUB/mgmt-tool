@@ -119,6 +119,14 @@ input[type=checkbox]{
     width: 1%;
 }
 
+#user_customer_id{
+    width: 78%;
+    padding: 1px;
+    font-size: 13px;
+    line-height: 18px; 
+    background-color: white;
+}
+
 select {
     width: 20%;
     color: black;
